@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import HorizontalSeparator from "./app/components/HorizontalSeparator";
+import MenuBar from "./app/components/MenuBar";
+import MenuButton from "./app/components/MenuButton";
+import BrowseScreen from "./app/screens/BrowseScreen";
+import BrowseTopMenu from "./app/screens/BrowseTopMenu";
+import Screen from "./app/screens/Screen";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Screen style={styles.container}>
+      <BrowseTopMenu></BrowseTopMenu>
+      <HorizontalSeparator></HorizontalSeparator>
+      <MenuBar></MenuBar>
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    //flexDirection: "row",
+    backgroundColor: "#fff",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
 });
