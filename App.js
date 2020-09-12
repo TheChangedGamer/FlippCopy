@@ -7,11 +7,13 @@ import MenuButton from "./app/components/MenuButton";
 import BrowseScreen from "./app/screens/BrowseScreen";
 import BrowseTopMenu from "./app/screens/BrowseTopMenu";
 import Screen from "./app/screens/Screen";
+import Explore from "./app/screens/Explore";
 export default function App() {
   return (
     <Screen style={styles.container}>
       <BrowseTopMenu></BrowseTopMenu>
       <HorizontalSeparator></HorizontalSeparator>
+      <Explore />
       <MenuBar></MenuBar>
     </Screen>
   );

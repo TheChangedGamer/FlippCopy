@@ -6,4 +6,7 @@ export default {
   dark: "#0c0c0c",
   gray: "gray",
   light: "lightgray",
+  blue: "#0000ff",
+  honeydew: "#f0fff0",
+  grey: "#808080",
 };
