@@ -8,12 +8,23 @@ import BrowseScreen from "./app/screens/BrowseScreen";
 import BrowseTopMenu from "./app/screens/BrowseTopMenu";
 import Screen from "./app/screens/Screen";
 import Explore from "./app/screens/Explore";
+
+import colors from "./app/configs/colors";
 export default function App() {
   return (
     <Screen style={styles.container}>
       <BrowseTopMenu></BrowseTopMenu>
       <HorizontalSeparator></HorizontalSeparator>
-      <Explore />
+      <View
+        style={{
+          //height: "80%",
+          paddingHorizontal: 10,
+          marginBottom: 120,
+          backgroundColor: colors.light,
+        }}
+      >
+        <Explore />
+      </View>
       <MenuBar></MenuBar>
     </Screen>
   );
@@ -22,8 +33,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //flexDirection: "row",
-    backgroundColor: "#fff",
+    height: "100%",
+    flexDirection: "row",
+    //backgroundColor: "#000",
     // alignItems: "center",
     // justifyContent: "center",
   },

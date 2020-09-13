@@ -75,11 +75,13 @@ const styles = StyleSheet.create({
   menuButtonContainer: {
     position: "absolute",
     bottom: 0,
-    //width: "100%",
-    flex: 1,
+    width: "100%",
+    //height:70,
+    //   flex: 1,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "white",
   },
   list: {
     width: "100%",
