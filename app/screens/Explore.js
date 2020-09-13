@@ -35,6 +35,7 @@ const messages = [
 ];
 export default function Explore({ text }) {
   return (
+    // <View style={{ paddingBottom: 10 }}>
     <FlatList
       style={styles.container}
       data={messages}
@@ -48,11 +49,16 @@ export default function Explore({ text }) {
         />
       )}
     ></FlatList>
+    //  </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.grey,
+    //height: "100%",
+    paddingTop: 12,
+    paddingBottom: 200,
+    //paddingVertical: 100,
+    //backgroundColor: colors.grey,
   },
 });
