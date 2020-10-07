@@ -18,7 +18,7 @@ export default function App() {
       <View
         style={{
           //height: "80%",
-          paddingHorizontal: 10,
+
           marginBottom: 120,
           backgroundColor: colors.light,
         }}

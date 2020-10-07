@@ -7,7 +7,7 @@ const messages = [
   {
     id: 1,
     title: "Lion",
-    description: "jean",
+    description: "Jean",
     imageItem: require("../assets/Jeans.jpeg"),
     imageIcon: require("../assets/lion.jpeg"),
   },
@@ -55,9 +55,10 @@ export default function Explore({ text }) {
 
 const styles = StyleSheet.create({
   container: {
-    //height: "100%",
+    height: "100%",
     paddingTop: 12,
-    paddingBottom: 200,
+    //paddingBottom: 200,
+    paddingHorizontal: 10,
     //paddingVertical: 100,
     //backgroundColor: colors.grey,
   },
