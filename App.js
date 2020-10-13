@@ -10,10 +10,19 @@ import Screen from "./app/screens/Screen";
 import Explore from "./app/screens/Explore";
 
 import colors from "./app/configs/colors";
+import NavigationBar from "./app/navigation/NavigationBar";
+import { NavigationContainer } from "@react-navigation/native";
 export default function App() {
   return (
     <Screen style={styles.container}>
-      <BrowseTopMenu></BrowseTopMenu>
+      <NavigationContainer>
+        <NavigationBar></NavigationBar>
+      </NavigationContainer>
+    </Screen>
+  );
+}
+/* 
+ <BrowseTopMenu></BrowseTopMenu>
       <HorizontalSeparator></HorizontalSeparator>
       <View
         style={{
@@ -25,11 +34,7 @@ export default function App() {
       >
         <Explore />
       </View>
-      <MenuBar></MenuBar>
-    </Screen>
-  );
-}
-
+      <MenuBar></MenuBar> */
 const styles = StyleSheet.create({
   container: {
     flex: 1,

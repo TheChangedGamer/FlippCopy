@@ -5,7 +5,11 @@ import MenuButton from "../components/MenuButton";
 import colors from "../configs/colors";
 
 export default function BrowseScreen() {
-  return <View style={styles.container}></View>;
+  return (
+    <View>
+      <Text>Search Screen</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
