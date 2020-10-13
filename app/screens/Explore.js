@@ -1,13 +1,15 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import Card from "../components/Card";
 import colors from "../configs/colors";
+// import BrowseBar from "../navigation/BrowseBar";
 
 const messages = [
   {
     id: 1,
     title: "Lion",
-    description: "jean",
+    description: "Jean",
     imageItem: require("../assets/Jeans.jpeg"),
     imageIcon: require("../assets/lion.jpeg"),
   },
@@ -33,32 +35,44 @@ const messages = [
     imageIcon: require("../assets/academyicon.png"),
   },
 ];
+//Need to fix the paddingBottom
 export default function Explore({ text }) {
   return (
-    // <View style={{ paddingBottom: 10 }}>
-    <FlatList
-      style={styles.container}
-      data={messages}
-      keyExtractor={(message) => message.id.toString()}
-      renderItem={({ item }) => (
-        <Card
-          title={item.title}
-          subtitle={item.description}
-          imageItem={item.imageItem}
-          imageIcon={item.imageIcon}
-        />
-      )}
-    ></FlatList>
-    //  </View>
+    <View style={{ paddingBottom: 153 }}>
+      <FlatList
+        style={styles.container}
+        data={messages}
+        keyExtractor={(message) => message.id.toString()}
+        renderItem={({ item }) => (
+          <Card
+            title={item.title}
+            subtitle={item.description}
+            imageItem={item.imageItem}
+            imageIcon={item.imageIcon}
+          ></Card>
+        )}
+      ></FlatList>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    //height: "100%",
+    height: "100%",
+
     paddingTop: 12,
-    paddingBottom: 200,
+    // paddingBottom: 200,
     //paddingVertical: 100,
+    paddingHorizontal: 12,
     //backgroundColor: colors.grey,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 3,
+
+    elevation: 22,
   },
 });

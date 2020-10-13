@@ -11,6 +11,7 @@ import colors from "../configs/colors";
 import { color } from "react-native-reanimated";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import routes from "./routes";
 const Tab = createBottomTabNavigator();
 
 const NavigationBar = () => (
@@ -21,11 +22,13 @@ const NavigationBar = () => (
       inactiveBackgroundColor: colors.white,
       inactiveTintColor: colors.light,
       size: 60,
+      // style: { marginTop: -20 },
+      tabStyle: { marginBottom: 3, marginTop: 5 },
       iconStyle: 30,
     }}
   >
     <Tab.Screen
-      name="Browse"
+      name={routes.BROWSE}
       component={BrowseScreen}
       options={{
         tabBarIcon: ({ size = 70, color }) => (
@@ -34,38 +37,38 @@ const NavigationBar = () => (
       }}
     />
     <Tab.Screen
-      name="Coupons"
+      name={routes.COUPONS}
       component={CouponsScreen}
       options={{
         tabBarIcon: ({ size = 70, color }) => (
-          <MaterialCommunityIcons name="cash" size={30} color={color} />
+          <MaterialCommunityIcons name="cash" size={28} color={color} />
         ),
       }}
     />
     <Tab.Screen
-      name="Deals"
+      name={routes.DEALS}
       component={DealsScreen}
       options={{
         tabBarIcon: ({ size = 70, color }) => (
-          <MaterialCommunityIcons name="fire" size={30} color={color} />
+          <MaterialCommunityIcons name="fire" size={28} color={color} />
         ),
       }}
     />
     <Tab.Screen
-      name="Search"
+      name={routes.SEARCH}
       component={SearchScreen}
       options={{
         tabBarIcon: ({ size = 70, color }) => (
-          <MaterialCommunityIcons name="table-search" size={30} color={color} />
+          <MaterialCommunityIcons name="table-search" size={28} color={color} />
         ),
       }}
     />
     <Tab.Screen
-      name="ShoppingList"
+      name={routes.SHOPPING_LIST}
       component={ShoppingListScreen}
       options={{
         tabBarIcon: ({ size = 70, color }) => (
-          <MaterialCommunityIcons name="cart-outline" size={30} color={color} />
+          <MaterialCommunityIcons name="cart-outline" size={28} color={color} />
         ),
       }}
     />

@@ -5,8 +5,8 @@ import { AntDesign } from "@expo/vector-icons";
 export default function Card({ title, subtitle, imageItem, imageIcon }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.imageIcon}>
-        <Image style={styles.image} source={imageIcon} />
+      <View style={styles.iconBar}>
+        <Image style={styles.smallIconImage} source={imageIcon} />
         <View style={styles.userItem}>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.subtitle}>{subtitle}</Text>
@@ -15,7 +15,7 @@ export default function Card({ title, subtitle, imageItem, imageIcon }) {
           <AntDesign
             style={styles.reaction}
             name="hearto"
-            size={24}
+            size={20}
             color="black"
           />
         </View>
@@ -35,20 +35,24 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     marginBottom: 15,
   },
-  imageIcon: {
+  iconBar: {
+    //backgroundColor: "orange",
     flexDirection: "row",
-    marginVertical: 10,
+
+    alignItems: "center",
+    paddingVertical: 10,
     paddingHorizontal: 10,
+    paddingLeft: 15,
   },
   imageItem: {
     width: "100%",
-    height: 200,
+    height: 175,
   },
-  image: {
+  smallIconImage: {
     justifyContent: "center",
     alignItems: "center",
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     borderRadius: 35,
   },
   reaction: {},
@@ -56,19 +60,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
-    top: 15,
-    right: 30,
+
+    right: 15,
   },
   userItem: {
-    padding: 5,
-    alignItems: "center",
-    justifyContent: "center",
+    //padding: 5,
+    paddingLeft: 10,
+    // alignItems: "center",
+    // justifyContent: "center",
   },
   title: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: "bold",
   },
   subtitle: {
-    color: colors.blue,
+    fontSize: 12,
+    color: colors.secondary,
   },
 });
