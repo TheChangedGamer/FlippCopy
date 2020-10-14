@@ -10,6 +10,13 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import Animated from "react-native-reanimated";
 import Explore from "../screens/browse_screen/Explore";
 
+import colors from "../configs/colors"
+import AToZ from "../screens/browse_screen/AToZ";
+import Groceries from "../screens/browse_screen/Groceries";
+import Pharmacy from "../screens/browse_screen/Pharmacy";
+
+import routes from "./routes";
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const TabTop = createMaterialTopTabNavigator();
@@ -59,7 +66,9 @@ function MyTabBar({ state, descriptors, navigation, position }) {
             // accessibilityState={isFocused ? { selected: true } : {}}
             // accessibilityLabel={options.tabBarAccessibilityLabel}
             // testID={options.tabBarTestID}
+            
             onPress={onPress}
+            
             // onLongPress={onLongPress}
             style={{ flex: 1 }}
           >
@@ -92,9 +101,26 @@ const TextBar=({navigation}) => (
   );
 function BrowseBar({ state, descriptors, navigation, position }) {
   return (
-    <TabTop.Navigator tabBar={props => <MyTabBar{...props}/>}>
-      
-      <TabTop.Screen name="Lastest" component={Lastest}></TabTop.Screen>
+    <TabTop.Navigator 
+    activeTintColor = {colors.primary}
+  tabBarIcon={{tintColor:colors.secondary}}
+ 
+  // tabBarLabel= {{tintColor :colors.secondary}}
+  tabBarOptions= {{
+    activeTintColor: colors.secondary,
+    inactiveTintColor: colors.gray,
+    scrollEnabled: true,
+    labelStyle: {
+      fontSize: 14,
+      // backgroundColor: colors
+    }, 
+  }}
+    >
+      <TabTop.Screen name={routes.EXPLORE} component={Explore}></TabTop.Screen>
+      <TabTop.Screen name={routes.LASTEST} component={Lastest}></TabTop.Screen>
+      <TabTop.Screen name={routes.AToZ} component={AToZ}></TabTop.Screen>
+      <TabTop.Screen name={routes.GROCERIES} component={Groceries}></TabTop.Screen>
+      <TabTop.Screen name={routes.PHARMACY} component={Pharmacy}></TabTop.Screen>
       <TabTop.Screen name="TextBar" component={TextBar}></TabTop.Screen>
 
     </TabTop.Navigator>

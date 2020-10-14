@@ -4,4 +4,12 @@ export default Object.freeze({
   DEALS: "Deals",
   SEARCH: "Search",
   SHOPPING_LIST: "Shopping List",
+
+  // browse screen
+  PHARMACY: "Pharmacy",
+  LASTEST: "Lastest",
+  AToZ: "AToZ",
+  GROCERIES: "Groceries",
+  EXPLORE: "Explore"
+
 });
