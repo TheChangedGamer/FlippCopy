@@ -1,8 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
-import Card from "../components/Card";
-import colors from "../configs/colors";
+import Card from "../../components/Card";
+import colors from "../../configs/colors";
 // import BrowseBar from "../navigation/BrowseBar";
 
 const messages = [
@@ -10,35 +10,35 @@ const messages = [
     id: 1,
     title: "Lion",
     description: "Jean",
-    imageItem: require("../assets/Jeans.jpeg"),
-    imageIcon: require("../assets/lion.jpeg"),
+    imageItem: require("../../assets/Jeans.jpeg"),
+    imageIcon: require("../../assets/lion.jpeg"),
   },
   {
     id: 2,
     title: "Le Thi Minh Trang",
     description: "Shirt",
-    imageItem: require("../assets/shirt.jpeg"),
-    imageIcon: require("../assets/myImage.jpg"),
+    imageItem: require("../../assets/shirt.jpeg"),
+    imageIcon: require("../../assets/myImage.jpg"),
   },
   {
     id: 3,
     title: "Amazon",
     description: "Books",
-    imageItem: require("../assets/books.jpeg"),
-    imageIcon: require("../assets/amazonicon.png"),
+    imageItem: require("../../assets/books.jpeg"),
+    imageIcon: require("../../assets/amazonicon.png"),
   },
   {
     id: 4,
     title: "Academy",
     description: "Fishing Rod",
-    imageItem: require("../assets/fishingrod.jpeg"),
-    imageIcon: require("../assets/academyicon.png"),
+    imageItem: require("../../assets/fishingrod.jpeg"),
+    imageIcon: require("../../assets/academyicon.png"),
   },
 ];
 //Need to fix the paddingBottom
 export default function Explore({ text }) {
   return (
-    <View style={{ paddingBottom: 153 }}>
+    <View style={{ }}>
       <FlatList
         style={styles.container}
         data={messages}

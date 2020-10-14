@@ -9,10 +9,10 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import MenuButton from "../components/MenuButton";
-import VerticalSeparator from "../components/VerticalSeparator";
-import AppText from "../components/AppText";
-import colors from "../configs/colors";
+import MenuButton from "../../components/MenuButton";
+import VerticalSeparator from "../../components/VerticalSeparator";
+import AppText from "../../components/AppText";
+import colors from "../../configs/colors";
 
 export default function BrowseTopMenu() {
   const listTextMenus = [
@@ -59,7 +59,7 @@ export default function BrowseTopMenu() {
         ></MenuButton>
         <Image
           style={styles.image}
-          source={require("../assets/flipplogo2.png")}
+          source={require("../../assets/flipplogo2.png")}
         ></Image>
         <MenuButton
           icon="settings"

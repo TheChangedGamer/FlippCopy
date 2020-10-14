@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-navigation-stack @react-native-community/masked-view react-native-safe-area-context
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @react-native-safe-area-contex@3.0.7
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\TheLegendaryChanged\bin;C:\Python38\Scripts;C:\Python38;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\QuickTime\QTSystem;C:\Program Files\Git\cmd;D:\Program Files\AMD\ATI.ACE\Core-Static;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin;C:\Users\TheLegendaryChanged\AppData\Roaming\npm\node_modules;C:\Users\TheLegendaryChanged\AppData\Local\Microsoft\WindowsApps;C:\Users\TheLegendaryChanged\AppData\Roaming\npm;C:\Users\TheLegendaryChanged\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\TheLegendaryChanged\AppData\Local\Yarn\bin
@@ -14,7 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\TheLegendaryChanged\Desktop\FlippCopyTest\node_modules\@babel\generator\node_modules\.bin'
+  Error: https://registry.yarnpkg.com/@react-native-safe-area-contex: Request "https://registry.yarnpkg.com/@react-native-safe-area-contex" returned a 405
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66105:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140748:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141720:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141642:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1220:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
 
 npm manifest: 
   {
@@ -38,7 +48,7 @@ npm manifest:
       "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
       "react-native-gesture-handler": "~1.6.0",
       "react-native-reanimated": "~1.9.0",
-      "react-native-safe-area-context": "^3.0.7",
+      "react-native-safe-area-context": "^3.1.8",
       "react-native-screens": "~2.9.0",
       "react-native-web": "~0.11.7",
       "react-navigation-stack": "^2.8.4",
@@ -1290,6 +1300,14 @@ Lockfile:
     version "0.1.10"
     resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
     integrity sha512-rk4sWFsmtOw8oyx8SD3KSvawwaK7gRBSEIy2TAwURyGt+3TizssXP1r8nx3zY+R7v2vYYHXZ+k2/GULAT/bcaQ==
+  
+  "@react-navigation/bottom-tabs@^5.9.2":
+    version "5.9.2"
+    resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.9.2.tgz#b071d9f39b275d4ea256df7bfb1ee83bbddeebeb"
+    integrity sha512-nSaAXFNbRukhMGq4U3m1rqbFZEPT64/gPTwUwQ5YQom5Q0a6xZ0AnOmtFIXvDBbK5VJiokGdBLJ/TMDchqcujQ==
+    dependencies:
+      color "^3.1.2"
+      react-native-iphone-x-helper "^1.2.1"
   
   "@react-navigation/core@^5.12.5":
     version "5.12.5"
@@ -4605,6 +4623,11 @@ Lockfile:
     integrity sha512-Aj+spgIHRiVv7ezGADxnSH1EoKrQRD2+XaSiGY0MiB/pvRNNrZPSJ+3NVpvLwWf9lZMOP7dwqqyJIzoZgBDt8w==
     dependencies:
       fbjs "^1.0.0"
+  
+  react-native-safe-area-context@^3.1.8:
+    version "3.1.8"
+    resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.1.8.tgz#7a9883aa0f38f9c77d4bef2b89e4e285bc1024a3"
+    integrity sha512-9gUlsDZ96QwT9AKzA6aVWM/NX5rlJgauZ9HgCDVzKbe29UQYT1740QJnnaI2GExmkFGp6o7ZLNhCXZW95eYVFA==
   
   react-native-safe-area-context@~3.0.7:
     version "3.0.7"
