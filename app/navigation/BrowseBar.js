@@ -10,7 +10,7 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import Animated from "react-native-reanimated";
 import Explore from "../screens/browse_screen/Explore";
 
-import colors from "../configs/colors"
+import colors from "../configs/colors";
 import AToZ from "../screens/browse_screen/AToZ";
 import Groceries from "../screens/browse_screen/Groceries";
 import Pharmacy from "../screens/browse_screen/Pharmacy";
@@ -23,7 +23,7 @@ const TabTop = createMaterialTopTabNavigator();
 
 function MyTabBar({ state, descriptors, navigation, position }) {
   return (
-    <View style={{ flexDirection: 'row', paddingTop: 10 }}>
+    <View style={{ flexDirection: "row", paddingTop: 10 }}>
       <Text>hello</Text>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
@@ -38,7 +38,7 @@ function MyTabBar({ state, descriptors, navigation, position }) {
 
         const onPress = () => {
           const event = navigation.emit({
-            type: 'tabPress',
+            type: "tabPress",
             target: route.key,
           });
 
@@ -49,7 +49,7 @@ function MyTabBar({ state, descriptors, navigation, position }) {
 
         const onLongPress = () => {
           navigation.emit({
-            type: 'tabLongPress',
+            type: "tabLongPress",
             target: route.key,
           });
         };
@@ -66,9 +66,8 @@ function MyTabBar({ state, descriptors, navigation, position }) {
             // accessibilityState={isFocused ? { selected: true } : {}}
             // accessibilityLabel={options.tabBarAccessibilityLabel}
             // testID={options.tabBarTestID}
-            
+
             onPress={onPress}
-            
             // onLongPress={onLongPress}
             style={{ flex: 1 }}
           >
@@ -80,60 +79,68 @@ function MyTabBar({ state, descriptors, navigation, position }) {
     </View>
   );
 }
-const TextBar=({navigation}) => (
+const TextBar = ({ navigation }) => (
   <Stack.Navigator
-  headerMode="none"
-  tabBarOptions={{
-    showLabel : false,
-    style:{
-      width:0,
-      height:0
-    },
-    tabStyle:{
-      width:0,
-      height:0
-    }
-
-  }}
+    headerMode="none"
+    tabBarOptions={{
+      showLabel: false,
+      style: {
+        width: 0,
+        height: 0,
+      },
+      tabStyle: {
+        width: 0,
+        height: 0,
+      },
+    }}
   >
     <Stack.Screen name="Explore" component={Explore}></Stack.Screen>
   </Stack.Navigator>
-  );
+);
 function BrowseBar({ state, descriptors, navigation, position }) {
   return (
-    <TabTop.Navigator 
-    activeTintColor = {colors.primary}
-  tabBarIcon={{tintColor:colors.secondary}}
- 
-  // tabBarLabel= {{tintColor :colors.secondary}}
-  tabBarOptions= {{
-    activeTintColor: colors.secondary,
-    inactiveTintColor: colors.gray,
-    scrollEnabled: true,
-    labelStyle: {
-      fontSize: 14,
-      // backgroundColor: colors
-    }, 
-  }}
+    <TabTop.Navigator
+      activeTintColor={colors.primary}
+      tabBarIcon={{ tintColor: colors.secondary }}
+      // tabBarLabel= {{tintColor :colors.secondary}}
+      tabBarOptions={{
+        activeTintColor: colors.secondary,
+        inactiveTintColor: colors.gray,
+        scrollEnabled: true,
+        labelStyle: {
+          fontSize: 12,
+          // backgroundColor: colors
+        },
+        tabStyle: {
+          marginVertical: -5,
+          paddingVertical: 0,
+          width: 100,
+        },
+      }}
     >
       <TabTop.Screen name={routes.EXPLORE} component={Explore}></TabTop.Screen>
       <TabTop.Screen name={routes.LASTEST} component={Lastest}></TabTop.Screen>
       <TabTop.Screen name={routes.AToZ} component={AToZ}></TabTop.Screen>
-      <TabTop.Screen name={routes.GROCERIES} component={Groceries}></TabTop.Screen>
-      <TabTop.Screen name={routes.PHARMACY} component={Pharmacy}></TabTop.Screen>
+      <TabTop.Screen
+        name={routes.GROCERIES}
+        component={Groceries}
+      ></TabTop.Screen>
+      <TabTop.Screen
+        name={routes.PHARMACY}
+        component={Pharmacy}
+      ></TabTop.Screen>
       <TabTop.Screen name="TextBar" component={TextBar}></TabTop.Screen>
-
     </TabTop.Navigator>
   );
 }
 
 // const BrowseBar = () => (
 //   <Stack.Navigator
-  
+
 //   >
 //     {/* <Stack.Screen name="Explore" component={Explore}></Stack.Screen>  */}
-//     <Stack.Screen name="Lastest" component={LastestScreen}></Stack.Screen> 
-//     <Stack.Screen name="Deals" component={DealsScreen}></Stack.Screen> 
+//     <Stack.Screen name="Lastest" component={LastestScreen}></Stack.Screen>
+//     <Stack.Screen name="Deals" component={DealsScreen}></Stack.Screen>
 
 //   </Stack.Navigator>
 // );

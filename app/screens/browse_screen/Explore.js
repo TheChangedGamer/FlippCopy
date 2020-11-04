@@ -1,8 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import Card from "../../components/Card";
 import colors from "../../configs/colors";
+
+import listingsApi from "../../api/listings";
 // import BrowseBar from "../navigation/BrowseBar";
 
 const messages = [
@@ -37,18 +39,32 @@ const messages = [
 ];
 //Need to fix the paddingBottom
 export default function Explore({ text }) {
+  const [listings, setListing] = useState([]);
+  //this effect should execute once when it first render
+  useEffect(() => {
+    loadListings();
+  }, []);
+
+  const loadListings = async () => {
+    const response = await listingsApi.getListings();
+    // console.log(response.data[0].coupons[0].items[0].name);
+    console.log(response.data[0].logo);
+
+    setListing(response.data);
+  };
+
   return (
-    <View style={{ }}>
+    <View style={{}}>
       <FlatList
         style={styles.container}
-        data={messages}
-        keyExtractor={(message) => message.id.toString()}
+        data={listings}
+        keyExtractor={(listings) => listings.id.toString()}
         renderItem={({ item }) => (
           <Card
-            title={item.title}
-            subtitle={item.description}
+            title={item.name}
+            subtitle={item.coupons[0]}
             imageItem={item.imageItem}
-            imageIcon={item.imageIcon}
+            imageIcon={item.logo}
           ></Card>
         )}
       ></FlatList>
